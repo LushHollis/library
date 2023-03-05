@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
-    <div id="addBook">
-        <input id="title" required>Title</input>
-        <input id="author" required>Author</input>
-        <input type="checkbox" id="read">Finished reading?</input>
-        <input id="pages" type="number">Pages</input>
-        <input id="readPages" type="number">Pages read</input>
-        <button onclick="addBook()">Add Book</button>
+    <div id="addBookPopup">
+        <input class="addBook" id="title" required>Title</input>
+        <input class="addBook" id="author" required>Author</input>
+        <input class="addBook" type="checkbox" id="read">Finished reading?</input>
+        <input class="addBook" id="pages" type="number">Pages</input>
+        <input class="addBook" id="readPages" type="number">Pages read</input>
+        <button class="addBook" onclick="addBook()">Add Book to Library</button>
     </div>
+    <button onclick="showAddBookPopup()" class="center">Add Book</button>
     <script src="script.js"></script>
 </body>
 </html>
