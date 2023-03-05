@@ -8,11 +8,18 @@
     width:1;
     height:1;
 }
-#books{
+.book{
     background-color:rgb(216, 216, 216);
+    width:40vw;
 }
 
 .center{
     margin:auto;
     text-align:center;
 }
+
+/* 
+todo:
+- border + border-radius for .book
+- addbook
+*/
