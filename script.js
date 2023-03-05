@@ -5,6 +5,7 @@ let readInput=document.getElementById("read");
 let pagesInput=document.getElementById("pages");
 let readPagesInput=document.getElementById("readPages");
 let addBookPopup=document.getElementById("addBookPopup");
+let books=document.getElementById("books");
 
 function Book(title,author,read,pages,readPages){
     this.title=title;
@@ -32,6 +33,7 @@ function addBook(){
     addBookPopup.style.display="none";
     addBookPopup.style.width="1";
     addBookPopup.style.height="1";
+    showBooks();
 }
 
 function showAddBookPopup(){
@@ -40,11 +42,21 @@ function showAddBookPopup(){
     addBookPopup.style.height="96vh";
 }
 
+function showBooks(){
+    for (let i=0;i<books.children.length;i++){
+        books.children[i].remove();
+    }
+    for (let i=0;i<library.length;i++){
+        books.appendChild(document.createElement("div"));
+        books.children[i].innerHTML=`<strong>${library[i].title}</strong></br>${library[i].author}</br>${library[i].pages}</br>${library[i].readPages}`;
+    }
+}
+showBooks();
+
 /*
 to-do:
-- implement HTML
-    - addBook(); popup
-    - showBooks();
+- spacing between book divs
+- book div width (20?)
 - Book.removeBook();
 - local storage
 */
