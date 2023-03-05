@@ -1,0 +1,15 @@
+.addBook{
+    display:block;
+}
+#addBookPopup{
+    background-color:gray;
+    border-radius:25px;
+    display:none;
+    width:1;
+    height:1;
+}
+
+.center{
+    margin:auto;
+    text-align:center;
+}
