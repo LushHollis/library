@@ -47,16 +47,23 @@ function showBooks(){
         books.children[i].remove();
     }
     for (let i=0;i<library.length;i++){
-        books.appendChild(document.createElement("div"));
-        books.children[i].innerHTML=`<strong>${library[i].title}</strong></br>${library[i].author}</br>${library[i].pages}</br>${library[i].readPages}`;
+        let newDiv=document.createElement("div");
+        books.appendChild(newDiv);
+        newDiv.className="book center";
+        newDiv.innerHTML=`<strong>${library[i].title}</strong><br>${library[i].author}`;
+        books.appendChild(document.createElement("br"));
+        books.appendChild(document.createElement("br"));
     }
+    console.log(books);
 }
+library[0]=new Book("Children of Blood and Bone","Tomi Adeyemi",true,300);
+library[1]=new Book("Children of Blood and Bone","Tomi Adeyemi",true,300);
+library[2]=new Book("Children of Blood and Bone","Tomi Adeyemi",true,300);
 showBooks();
 
 /*
 to-do:
-- spacing between book divs
-- book div width (20?)
+- 2 columns
 - Book.removeBook();
 - local storage
 */
