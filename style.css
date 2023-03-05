@@ -2,11 +2,14 @@
     display:block;
 }
 #addBookPopup{
-    background-color:gray;
+    background-color:rgb(153, 153, 153);
     border-radius:25px;
     display:none;
     width:1;
     height:1;
+}
+#books{
+    background-color:rgb(216, 216, 216);
 }
 
 .center{
