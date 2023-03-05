@@ -1,25 +1,42 @@
 let library=[];
+let titleInput=document.getElementById("title");
+let authorInput=document.getElementById("author");
+let readInput=document.getElementById("read");
+let pagesInput=document.getElementById("pages");
+let readPagesInput=document.getElementById("readPages");
 
-function Book(title,author,read=false,pages=100,readPages=100){
+function Book(title,author,read,pages,readPages){
     this.title=title;
     this.author=author;
-    this.read=read;
-    this.pages=pages;
+    if (read!==undefined){
+        if (read=="on" || read){
+            this.read=true;
+        }
+        else if (read=="off"||read==false){
+            this.read=false;
+        }
+    }
+    if (pages!==undefined){
+        this.pages=pages;
+    }
     if (read){
         this.readPages=pages;
     }
-    else{
+    else if (readPages!==undefined){
         this.readPages=readPages;
     }
 }
 
-library[0]=new Book("Children of Blood and Bone","Tomi Adeyemi",true);
+function addBook(){
+    library.push(new Book(titleInput.value,authorInput.value,readInput.value,pagesInput.value,readPagesInput.value));
+    console.log(library[library.length-1]);
+}
 
 /*
 to-do:
-- addBook();
 - implement HTML
+    - addBook(); popup
+    - showBooks();
 - Book.removeBook();
-- change default page number to "undefined"
 - local storage
 */
