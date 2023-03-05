@@ -4,6 +4,7 @@ let authorInput=document.getElementById("author");
 let readInput=document.getElementById("read");
 let pagesInput=document.getElementById("pages");
 let readPagesInput=document.getElementById("readPages");
+
 let addBookPopup=document.getElementById("addBookPopup");
 let books=document.getElementById("books");
 let firColumn=document.getElementById("firColumn");
@@ -41,7 +42,7 @@ function addBook(){
 function showAddBookPopup(){
     addBookPopup.style.display="block";
     addBookPopup.style.width="40vw";
-    addBookPopup.style.height="96vh";
+    addBookPopup.style.height="500px";
 }
 
 function showBooks(){
@@ -53,7 +54,6 @@ function showBooks(){
     }
     for (let i=0;i<library.length;i++){
         let newDiv=document.createElement("div");
-        console.log(i%2==0, firColumn);
         if (i%2==0){
             firColumn.appendChild(newDiv);
             firColumn.appendChild(document.createElement("br"));
@@ -67,9 +67,6 @@ function showBooks(){
     }
     console.log(books);
 }
-library[0]=new Book("Children of Blood and Bone","Tomi Adeyemi",true,300);
-library[1]=new Book("Children of Blood and Bone","Tomi Adeyemi",true,300);
-library[2]=new Book("Children of Blood and Bone","Tomi Adeyemi",true,300);
 showBooks();
 
 /*
