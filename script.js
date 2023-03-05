@@ -6,6 +6,8 @@ let pagesInput=document.getElementById("pages");
 let readPagesInput=document.getElementById("readPages");
 let addBookPopup=document.getElementById("addBookPopup");
 let books=document.getElementById("books");
+let firColumn=document.getElementById("firColumn");
+let secColumn=document.getElementById("secColumn");
 
 function Book(title,author,read,pages,readPages){
     this.title=title;
@@ -43,15 +45,25 @@ function showAddBookPopup(){
 }
 
 function showBooks(){
-    for (let i=0;i<books.children.length;i++){
-        books.children[i].remove();
+    for (let i=0;i<firColumn.children.length;i++){
+        firColumn.children[i].remove();
+    }
+    for (let i=0;i<secColumn.children.length;i++){
+        secColumn.children[i].remove();
     }
     for (let i=0;i<library.length;i++){
         let newDiv=document.createElement("div");
-        books.appendChild(newDiv);
+        console.log(i%2==0, firColumn);
+        if (i%2==0){
+            firColumn.appendChild(newDiv);
+            firColumn.appendChild(document.createElement("br"));
+        }
+        else{
+            secColumn.appendChild(newDiv);
+            secColumn.appendChild(document.createElement("br"));
+        }
         newDiv.className="book center";
         newDiv.innerHTML=`<strong>${library[i].title}</strong><br>${library[i].author}<br>Pages: ${library[i].pages}<br>Pages read: ${library[i].readPages}`;
-        books.appendChild(document.createElement("br"));
     }
     console.log(books);
 }
