@@ -50,8 +50,7 @@ function showBooks(){
         let newDiv=document.createElement("div");
         books.appendChild(newDiv);
         newDiv.className="book center";
-        newDiv.innerHTML=`<strong>${library[i].title}</strong><br>${library[i].author}`;
-        books.appendChild(document.createElement("br"));
+        newDiv.innerHTML=`<strong>${library[i].title}</strong><br>${library[i].author}<br>Pages: ${library[i].pages}<br>Pages read: ${library[i].readPages}`;
         books.appendChild(document.createElement("br"));
     }
     console.log(books);
